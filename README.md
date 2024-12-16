@@ -1,4 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My App
+
+A modern Next.js application built with React and TailwindCSS, featuring a clean and responsive UI.
+
+## Features
+
+- Modern UI components using Radix UI
+- Responsive design with TailwindCSS
+- Type-safe development with TypeScript
+- API integration with environment variable configuration
+- Clean and maintainable code structure
+
+## Prerequisites
+
+Before you begin, ensure you have installed:
+- Node.js (version 18 or higher)
+- npm or yarn package manager
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd my-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables:
+Create a `.env` file in the root directory and add:
+```
+REACT_APP_API_BASE_URL=http://localhost:5000/api
+```
 
 ## Getting Started
 
@@ -16,21 +53,39 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+my-app/
+├── src/
+│   ├── app/              # Next.js app directory
+│   ├── components/       # Reusable UI components
+│   └── services/         # API and other services
+├── public/              # Static files
+├── styles/             # Global styles
+└── ...config files
+```
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Runs the development server
+- `npm run build` - Builds the application for production
+- `npm start` - Runs the production server
+- `npm run lint` - Runs ESLint for code linting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/) - React framework
+- [React](https://reactjs.org/) - UI library
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [ESLint](https://eslint.org/) - Code linting
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
