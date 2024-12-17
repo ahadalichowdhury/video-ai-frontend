@@ -1,12 +1,10 @@
 // Use the production URL or fall back to localhost
-const API_BASE_URL = 'http://iog84s80skogo8cwk4wscgwc.160.191.163.32.sslip.io';
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'video-ai-api.ahadalichowdhury.online';
 interface GenerateResponse {
     success: boolean;
     message: string;
     video_url: string;
 }
-
 export const storyService = {
     async generateStory(data: {
         headline: string;
