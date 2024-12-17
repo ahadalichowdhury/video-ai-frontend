@@ -1,4 +1,5 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// Use the production URL or fall back to localhost
+const API_BASE_URL = 'http://gsccws4w00c8wggkscocw4o8.160.191.163.32.sslip.io';
 
 interface GenerateResponse {
     success: boolean;
@@ -13,6 +14,7 @@ export const storyService = {
         voice_type: string;
     }): Promise<string> {
         try {
+            console.log('Making request to:', `${API_BASE_URL}/generate`);
             const response = await fetch(`${API_BASE_URL}/generate`, {
                 method: 'POST',
                 headers: {
