@@ -2,11 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { api } from '../app/api/services';
-
-interface Item {
-    id: number;
-    name: string;
-}
+import { Item } from '../types';
 
 export default function ItemList() {
     const [items, setItems] = useState<Item[]>([]);
@@ -27,7 +23,7 @@ export default function ItemList() {
                 setItems(response.data);
             }
         } catch (err) {
-            setError('Failed to fetch items');
+            setError(`Failed to fetch items: ${err instanceof Error ? err.message : 'Unknown error'}`);
         } finally {
             setLoading(false);
         }
@@ -42,7 +38,7 @@ export default function ItemList() {
                 setNewItemName('');
             }
         } catch (err) {
-            setError('Failed to create item');
+            setError(`Failed to create item: ${err instanceof Error ? err.message : 'Unknown error'}`);
         }
     };
 
@@ -53,7 +49,7 @@ export default function ItemList() {
                 setItems(items.filter(item => item.id !== id));
             }
         } catch (err) {
-            setError('Failed to delete item');
+            setError(`Failed to delete item: ${err instanceof Error ? err.message : 'Unknown error'}`);
         }
     };
 

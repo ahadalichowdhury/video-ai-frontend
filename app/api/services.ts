@@ -1,8 +1,10 @@
+import { Item, ApiResponse } from '../../types';
+
 const API_BASE_URL = 'http://localhost:5000/api';
 
 export const api = {
     // Get all items
-    async getItems() {
+    async getItems(): Promise<ApiResponse<Item[]>> {
         try {
             const response = await fetch(`${API_BASE_URL}/items`);
             const data = await response.json();
@@ -14,7 +16,7 @@ export const api = {
     },
 
     // Create a new item
-    async createItem(item: any) {
+    async createItem(item: Omit<Item, 'id'>): Promise<ApiResponse<Item>> {
         try {
             const response = await fetch(`${API_BASE_URL}/items`, {
                 method: 'POST',
@@ -32,7 +34,7 @@ export const api = {
     },
 
     // Update an item
-    async updateItem(id: number, item: any) {
+    async updateItem(id: number, item: Partial<Omit<Item, 'id'>>): Promise<ApiResponse<Item>> {
         try {
             const response = await fetch(`${API_BASE_URL}/items/${id}`, {
                 method: 'PUT',
