@@ -1,5 +1,5 @@
 // Use the production URL or fall back to localhost
-const API_BASE_URL = 'http://gsccws4w00c8wggkscocw4o8.160.191.163.32.sslip.io';
+const API_BASE_URL = 'http://iog84s80skogo8cwk4wscgwc.160.191.163.32.sslip.io';
 
 interface GenerateResponse {
     success: boolean;
